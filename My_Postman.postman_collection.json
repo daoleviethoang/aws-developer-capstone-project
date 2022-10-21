@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "8770e1d8-3387-4a5c-8246-85db13f78f77",
+		"name": "Udacity C4 Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15811178"
+	},
+	"item": [
+		{
+			"name": "TODOs",
+			"item": [
+				{
+					"name": "Get all todos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/prod/todos",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"prod",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create todo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Water flowers\",\n\t\"dueDate\": \"2019-06-11\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/prod/todos",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"prod",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update todo",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Water flowers\",\n\t\"dueDate\": \"2019-06-11\",\n\t\"done\": true\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/prod/todos/6d464f47-a6ee-448c-bf8b-3cabdf6c7af9",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"prod",
+								"todos",
+								"6d464f47-a6ee-448c-bf8b-3cabdf6c7af9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete todo",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/prod/todos/6d464f47-a6ee-448c-bf8b-3cabdf6c7af9",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"prod",
+								"todos",
+								"6d464f47-a6ee-448c-bf8b-3cabdf6c7af9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get attachment URL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/prod/todos/430e8f53-b4a7-4200-b22c-463052b37b07/attachment",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"prod",
+								"todos",
+								"430e8f53-b4a7-4200-b22c-463052b37b07",
+								"attachment"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiId",
+			"value": "j04buparui",
+			"type": "string"
+		},
+		{
+			"key": "authToken",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRNRDNaQnhFSHQ3RjRRWXIwc0VMcCJ9.eyJpc3MiOiJodHRwczovL2Rldi0ydjBjOWszcS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMTYyMzIxNjQ5MjU0MjE1MzYxNDIiLCJhdWQiOiJiWnVYU3FQZlBzVHFjOWlxVXZ1YXlYZzU4MkpsTkRQMyIsImlhdCI6MTY2NTk4MzY0MSwiZXhwIjoxNjY2MDE5NjQxLCJhdF9oYXNoIjoiWUJwNjExQTgxUzlNR2FMMXByZGVJdyIsInNpZCI6IlRHamI0TURUX3FrcDhQN1N2NW9nUmpQMTdRRlJQVy1yIiwibm9uY2UiOiIzTEx4RDV2THQ1VGdOaGpBbW41aVZYZWM5TGFlU09GayJ9.jEXSgLpSjiRQaOVHK3z2Tle-AqG3CKZv1PofGo9YBc0u4NQqNGNK_ou__7MLgBs10_rZ0NddCLRPmVh_0ZKEXw1blMs3evrGA-LM_SmHypu-mhOVu4xKNXXs-LJF-IB6CttYdN32uAJGj2zPqmHVBxs0ioNc6aSVTR3uOmreZ2Uo2PVVOt6Ih-HD_wIk0mHrkVhd1I6KGFR1n41tXot3lf6UMvdZHJ_gdBOju4faPYb6gLD6o4-fJ3awar07sod0h5oii_wos1FxQrXfNvl8vci1ryE6MrFfRkbTG1VmYmqF42LsKmzxCRDPSKORvswyi451ZwdMBwNh3HFETm-vCQ",
+			"type": "string"
+		}
+	]
+}
