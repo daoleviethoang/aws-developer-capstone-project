@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "8770e1d8-3387-4a5c-8246-85db13f78f77",
-		"name": "Udacity C4 Project",
+		"_postman_id": "89924f40-2370-4236-842a-3adb34aa148a",
+		"name": "Capstone Project Diary",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "15811178"
 	},
@@ -10,7 +10,7 @@
 			"name": "TODOs",
 			"item": [
 				{
-					"name": "Get all todos",
+					"name": "Get all diaries",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -21,7 +21,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/prod/todos",
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/prod/diaries",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
@@ -32,14 +32,83 @@
 							],
 							"path": [
 								"prod",
-								"todos"
+								"diaries"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create todo",
+					"name": "Search diary",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"searchValue\": \"Water new\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/prod/diaries/search",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"prod",
+								"diaries",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get 1 diary",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/prod/diary/1108b047-1453-4e2e-b063-e374c862a52b",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"prod",
+								"diary",
+								"1108b047-1453-4e2e-b063-e374c862a52b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create diary",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -78,7 +147,47 @@
 					"response": []
 				},
 				{
-					"name": "Update todo",
+					"name": "Update diary",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Water flowers new\",\n\t\"date\": \"2019-09-11\",\n\t\"description\": \"lorem\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/prod/diary/74de4c4f-58ab-41ab-8d51-75f5426f6bfd",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"prod",
+								"diary",
+								"74de4c4f-58ab-41ab-8d51-75f5426f6bfd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lock diary",
 					"request": {
 						"method": "PATCH",
 						"header": [
@@ -118,7 +227,47 @@
 					"response": []
 				},
 				{
-					"name": "Delete todo",
+					"name": "Unlock diary",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Water flowers\",\n\t\"dueDate\": \"2019-06-11\",\n\t\"done\": true\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/prod/todos/6d464f47-a6ee-448c-bf8b-3cabdf6c7af9",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"prod",
+								"todos",
+								"6d464f47-a6ee-448c-bf8b-3cabdf6c7af9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete diary",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -238,12 +387,12 @@
 	"variable": [
 		{
 			"key": "apiId",
-			"value": "j04buparui",
+			"value": "db1tz0bj9k",
 			"type": "string"
 		},
 		{
 			"key": "authToken",
-			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRNRDNaQnhFSHQ3RjRRWXIwc0VMcCJ9.eyJpc3MiOiJodHRwczovL2Rldi0ydjBjOWszcS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMTYyMzIxNjQ5MjU0MjE1MzYxNDIiLCJhdWQiOiJiWnVYU3FQZlBzVHFjOWlxVXZ1YXlYZzU4MkpsTkRQMyIsImlhdCI6MTY2NTk4MzY0MSwiZXhwIjoxNjY2MDE5NjQxLCJhdF9oYXNoIjoiWUJwNjExQTgxUzlNR2FMMXByZGVJdyIsInNpZCI6IlRHamI0TURUX3FrcDhQN1N2NW9nUmpQMTdRRlJQVy1yIiwibm9uY2UiOiIzTEx4RDV2THQ1VGdOaGpBbW41aVZYZWM5TGFlU09GayJ9.jEXSgLpSjiRQaOVHK3z2Tle-AqG3CKZv1PofGo9YBc0u4NQqNGNK_ou__7MLgBs10_rZ0NddCLRPmVh_0ZKEXw1blMs3evrGA-LM_SmHypu-mhOVu4xKNXXs-LJF-IB6CttYdN32uAJGj2zPqmHVBxs0ioNc6aSVTR3uOmreZ2Uo2PVVOt6Ih-HD_wIk0mHrkVhd1I6KGFR1n41tXot3lf6UMvdZHJ_gdBOju4faPYb6gLD6o4-fJ3awar07sod0h5oii_wos1FxQrXfNvl8vci1ryE6MrFfRkbTG1VmYmqF42LsKmzxCRDPSKORvswyi451ZwdMBwNh3HFETm-vCQ",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRNRDNaQnhFSHQ3RjRRWXIwc0VMcCJ9.eyJpc3MiOiJodHRwczovL2Rldi0ydjBjOWszcS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMTYyMzIxNjQ5MjU0MjE1MzYxNDIiLCJhdWQiOiJiWnVYU3FQZlBzVHFjOWlxVXZ1YXlYZzU4MkpsTkRQMyIsImlhdCI6MTY2NjM0MzE1MywiZXhwIjoxNjY2Mzc5MTUzLCJhdF9oYXNoIjoianRWTU1TWGZkcVY4eGVlUS11Nm9XQSIsInNpZCI6IkJUbG1oS1MwM0xZQll5N0lvSGR5cjRSaGhpWjY3emhxIiwibm9uY2UiOiJId24zMHM4TzBTZkgtNzN2b1JaSlpndzdlRnNOMVpDWSJ9.J_vvF8XnkGXBT3IhpyUDGjH5KH-NuhXHELvOcTvApYWfVgXTuEyFqnXvHehO8QqQSbXQjMgOBLuLsfaf9qAxkTSCLzZhy9aqJ0dIuBKgnLL28PDKvpziBxfFTKfXORURWeLKpa-AwSytNyVr6kollueL0L7bCrOG_xv3IkCCvKRad9jWm5GJ_ZiQBq0tO7ekqG1tx4MaFRObLzjxdd20K-mvi8OJYMdETxrHBLBxE-cp06mf06bmD_0krwbNOhheCQm5mmmJvM8enGb8DGB8Bba3b5NxHNuW0BwEPJjFv8Myhd_iCYXMtMMf9KQEz09kGBJg2Jl0LLOdqsuAaSnYJQ",
 			"type": "string"
 		}
 	]
