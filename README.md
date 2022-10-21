@@ -30,6 +30,7 @@ This should start a development server with the React application that will inte
 * Delete diary
 * Lock diary with password
 * Unlock the diary with the same password as the lock
+* Search diaries
 
 # Evidence collection
 
@@ -59,3 +60,6 @@ Edit image:
 
 Delete image:
 ![Alt text](images/8.png?raw=true "Image 8")
+
+Search diary:
+![Alt text](images/3.png?raw=true "Image 3")
